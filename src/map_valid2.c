@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   map_valid2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 16:49:42 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/12 16:54:04 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:15:06 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	wall_check(t_map *map_struct)
 {
@@ -85,7 +85,7 @@ void	flood_fill(t_map *map, char **tab)
 	check_rout(&begin, begin.y, begin.x);
 	free_mem(map->height, tab);
 	if (!(begin.exit == 1 && begin.n_rupees == 0))
-		error_message("No valid rout available");
+		error_message("No Valid Rout Available");
 }
 
 void	valid_rout(t_map *map)

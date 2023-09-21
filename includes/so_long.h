@@ -6,13 +6,13 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:00:27 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/29 18:07:05 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/21 18:31:22 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include "MLX42/MLX42.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <stdint.h>
 # include "../lib/libft/libft.h"
 # include "../lib/get_next_line/get_next_line.h"
@@ -86,7 +86,7 @@ typedef struct s_point
 t_map		*read_map(char *map);
 void		map_content(char *map);
 void		error_message(char	*msg);
-char		*map_as_string(char *map);
+char		*map_as_string(int fd);
 void		is_empty(char *map);
 void		is_rec_map(char **map);
 void		is_empty_line(char *map);
@@ -124,9 +124,12 @@ t_image		*link_texture(mlx_t *mlx, t_image *img);
 
 // enemy
 void		enemy_patrol(void *temp);
-// static void	move_all(const t_map *game, int count);
-// static void	check_status(const t_map *game);
 
 void		map_status(t_map *map);
 void		load_link(t_map *map, char dir);
+
+// printing
+void		string_to_screen(t_map *game);
+void		print_moves(t_map *game);
+void		print_rupees(t_map *game);
 #endif

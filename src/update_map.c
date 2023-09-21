@@ -6,11 +6,11 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 17:13:07 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/29 15:49:55 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:15:19 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	map_status(t_map *map)
 {
@@ -22,9 +22,8 @@ void	map_status(t_map *map)
 		map->grid[map->e_y][map->e_x] = '0';
 		if (map->p_x == map->e_x && map->p_y == map->e_y)
 		{
-			sleep(1);
 			mlx_close_window(map->mlx);
-			printf("Finish\n");
+			printf("YOU WON.\n");
 		}
 	}
 }

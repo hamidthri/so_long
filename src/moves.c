@@ -6,11 +6,11 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 11:56:40 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/26 18:23:35 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/21 14:45:26 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	load_link(t_map *map, char dir)
 {
@@ -49,14 +49,16 @@ void	move_up(t_map *map)
 		if (map->grid[map->p_y - 1][map->p_x] == 'C')
 		{
 			remove_collectible(map, map->p_y - 1, map->p_x);
+			print_rupees(map);
 			map->collected += 1;
 			map->grid[map->p_y - 1][map->p_x] = '0';
 		}
 		load_link(map, 'u');
+		print_moves(map);
 		map->p_y -= 1;
 		map->steps += 1;
 		map->images->link->instances[0].y -= 1 * PIXELS;
-		printf("steps: %zu\n", map->steps);
+		printf("Number of Steps: %zu\n", map->steps);
 	}
 	map_status(map);
 }
@@ -69,14 +71,16 @@ void	move_down(t_map	*map)
 		if (map->grid[map->p_y + 1][map->p_x] == 'C')
 		{
 			remove_collectible(map, map->p_y + 1, map->p_x);
+			print_rupees(map);
 			map->collected += 1;
 			map->grid[map->p_y + 1][map->p_x] = '0';
 		}
 		load_link(map, 'd');
+		print_moves(map);
 		map->p_y += 1;
 		map->steps += 1;
 		map->images->link->instances[0].y += 1 * PIXELS;
-		printf("steps: %zu\n", map->steps);
+		printf("Number of Steps: %zu\n", map->steps);
 	}
 	map_status(map);
 }
@@ -89,14 +93,19 @@ void	move_right(t_map *map)
 		if (map->grid[map->p_y][map->p_x + 1] == 'C')
 		{
 			remove_collectible(map, map->p_y, map->p_x + 1);
+			print_rupees(map);
 			map->collected += 1;
 			map->grid[map->p_y][map->p_x + 1] = '0';
 		}
 		load_link(map, 'r');
+		print_moves(map);
 		map->p_x += 1;
 		map->steps += 1;
 		map->images->link->instances[0].x += 1 * PIXELS;
-		printf("steps: %zu\n", map->steps);
+		ft_putstr_fd("Number of Steps: ", 1);
+		ft_putnbr_fd(map->steps, 1);
+		ft_putchar_fd('\n', 1);
+		// printf("Number of Steps: %zu\n", map->steps);
 	}
 	map_status(map);
 }
@@ -109,14 +118,16 @@ void	move_left(t_map *map)
 		if (map->grid[map->p_y][map->p_x - 1] == 'C')
 		{
 			remove_collectible(map, map->p_y, map->p_x - 1);
+			print_rupees(map);
 			map->grid[map->p_y][map->p_x - 1] = '0';
 			map->collected += 1;
 		}
 		load_link(map, 'l');
+		print_moves(map);
 		map->p_x -= 1;
 		map->steps += 1;
 		map->images->link->instances[0].x -= 1 * PIXELS;
-		printf("steps: %zu\n", map->steps);
+		printf("Number of Steps: %zu\n", map->steps);
 	}
 	map_status(map);
 }

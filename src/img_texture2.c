@@ -6,11 +6,11 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 12:02:19 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/26 16:31:45 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:19:51 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 t_image	*link_texture(mlx_t *mlx, t_image *img)
 {
@@ -25,7 +25,6 @@ t_image	*link_texture(mlx_t *mlx, t_image *img)
 	mlx_delete_texture(link);
 	return (img);
 }
-
 
 t_image	*grass_texture(mlx_t *mlx, t_image *img)
 {

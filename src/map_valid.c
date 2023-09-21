@@ -6,15 +6,14 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 16:55:07 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/26 15:49:13 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/21 19:25:25 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
-char	*map_as_string(char *map)
+char	*map_as_string(int fd)
 {
-	int		fd;
 	char	*map_str;
 	char	*line;
 	char	*temp;
@@ -22,7 +21,6 @@ char	*map_as_string(char *map)
 	map_str = (char *) ft_calloc(1, sizeof(char));
 	if (!map_str)
 		return (NULL);
-	fd = open(map, O_RDONLY);
 	while (1)
 	{
 		line = get_next_line(fd);

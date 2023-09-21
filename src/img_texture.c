@@ -6,11 +6,11 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 17:02:40 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/26 18:26:59 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:14:43 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 t_image	*collectible_texture(mlx_t *mlx, t_image *img)
 {

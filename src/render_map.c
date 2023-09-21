@@ -6,11 +6,11 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 17:07:49 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/29 15:49:00 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:15:13 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	fill_background(t_map *map)
 {

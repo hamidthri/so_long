@@ -6,11 +6,11 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 17:09:45 by htaheri           #+#    #+#             */
-/*   Updated: 2023/08/29 15:59:53 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:14:41 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 static void	check_status(const t_map *game)
 {
@@ -24,16 +24,15 @@ static void	check_status(const t_map *game)
 			&& game->p_y * PIXELS
 			== (size_t)game->images->enemy->instances[count].y)
 		{
-			sleep(1);
 			mlx_close_window(game->mlx);
-			printf ("Ow no! player got killed\n");
+			printf ("You got killed\n");
 			printf ("Try again!\n");
 		}
 		count++;
 	}
 }
 
-static void	move_all(const t_map *game, int count)
+void	move_all(const t_map *game, int count)
 {
 	t_var			var;
 
