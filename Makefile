@@ -21,7 +21,7 @@ LIBFT        =     $(LIBFT_DIR)/libft.a
 GNL_DIR      =     lib/get_next_line
 GNL          =     $(GNL_DIR)/libgnl.a
 CC			 = cc
-CFLAGS	     := -Wextra -Wall -Werror -g $(LIBS) -L$(LIBFT_DIR) -lft -L$(GNL_DIR) -lgnl
+CFLAGS	     := -Wextra -Wall -Werror $(LIBS) -L$(LIBFT_DIR) -lft -L$(GNL_DIR) -lgnl
 
 SRCS	    :=  src/enemy.c src/img_texture.c src/img_texture2.c src/main.c \
 				src/map_initialize.c src/map_valid.c src/map_valid2.c src/moves.c \
@@ -47,6 +47,8 @@ $(GNL):
 
 
 clean:
+	$(MAKE) -s -C $(LIBFT_DIR) clean
+	$(MAKE) -s -C $(GNL_DIR) clean
 	rm -rf $(OBJS)
 	rm -rf $(LIBMLX)/build
 
