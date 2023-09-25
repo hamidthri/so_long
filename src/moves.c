@@ -6,7 +6,7 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 11:56:40 by htaheri           #+#    #+#             */
-/*   Updated: 2023/09/21 14:45:26 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/25 14:42:05 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ void	move_up(t_map *map)
 		map->p_y -= 1;
 		map->steps += 1;
 		map->images->link->instances[0].y -= 1 * PIXELS;
-		printf("Number of Steps: %zu\n", map->steps);
+		ft_putstr_fd("Number of Steps: ", 1);
+		ft_putnbr_fd(map->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 	map_status(map);
 }
@@ -80,7 +82,9 @@ void	move_down(t_map	*map)
 		map->p_y += 1;
 		map->steps += 1;
 		map->images->link->instances[0].y += 1 * PIXELS;
-		printf("Number of Steps: %zu\n", map->steps);
+		ft_putstr_fd("Number of Steps: ", 1);
+		ft_putnbr_fd(map->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 	map_status(map);
 }
@@ -105,7 +109,6 @@ void	move_right(t_map *map)
 		ft_putstr_fd("Number of Steps: ", 1);
 		ft_putnbr_fd(map->steps, 1);
 		ft_putchar_fd('\n', 1);
-		// printf("Number of Steps: %zu\n", map->steps);
 	}
 	map_status(map);
 }
@@ -127,7 +130,9 @@ void	move_left(t_map *map)
 		map->p_x -= 1;
 		map->steps += 1;
 		map->images->link->instances[0].x -= 1 * PIXELS;
-		printf("Number of Steps: %zu\n", map->steps);
+		ft_putstr_fd("Number of Steps: ", 1);
+		ft_putnbr_fd(map->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 	map_status(map);
 }
