@@ -6,13 +6,12 @@
 /*   By: htaheri <htaheri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 17:57:41 by htaheri           #+#    #+#             */
-/*   Updated: 2023/09/21 18:31:48 by htaheri          ###   ########.fr       */
+/*   Updated: 2023/09/27 15:37:03 by htaheri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../MLX42/include/MLX42/MLX42.h"
-// #include <MLX42/MLX42.h>
 
 void	load_link_textures(t_map *map)
 {
@@ -30,22 +29,13 @@ void	load_link_textures(t_map *map)
 		error_message("Problem with loading png");
 }
 
-void	map_extention_check(char *map, char *ber)
+void	check_file_extension(char *file)
 {
-	size_t	i;
-	size_t	j;
+	size_t	len;
 
-	i = ft_strlen(map);
-	j = 0;
-	while (j < 3)
-	{
-		if (ber[j] != map[i - 3 + j])
-		{
-			error_message ("Invalid Extention");
-			return ;
-		}
-		j++;
-	}
+	len = ft_strlen(file);
+	if (len < 4 || ft_strncmp(file + len - 4, ".ber", 4))
+		error_message("Please provide a .ber file");
 }
 
 t_map	*initialize_map(char **array_map)
@@ -101,7 +91,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		error_message("Please add a Map");
-	map_extention_check(argv[1], "ber");
+	check_file_extension(argv[1]);
 	map = read_map(argv[1]);
 	map->mlx = mlx_init(map->width * PIXELS, \
 				map->height * PIXELS, "so_long", false);
